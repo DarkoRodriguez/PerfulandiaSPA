@@ -1,0 +1,81 @@
+usuario:
+{
+"run": "981276344-K",
+"nombre": "Alexis",
+"apellido": "Sanchez",
+"fechaNacimiento": "1988-11-19",
+"correo": "alex.tocopilla@example.com"
+}
+
+Productos:
+[
+    {
+        "id": 1,
+        "codigo": "SKU001",
+        "nombre": "Perfume Frances",
+        "descripcion": "Perfume de Francia, Paris",
+        "categoria": null,
+        "precioCompra": 40000.0,
+        "precioVenta": 65000.0
+    },
+    {
+        "id": 2,
+        "codigo": "SKU002",
+        "nombre": "Perfume Belga",
+        "descripcion": "Perfume de Belgica, Bruselas",
+        "categoria": null,
+        "precioCompra": 50000.0,
+        "precioVenta": 80000.0
+    },
+    {
+        "id": 4,
+        "codigo": "SKU003",
+        "nombre": "Perfume Chino",
+        "descripcion": "Perfume de China",
+        "categoria": "Penca",
+        "precioCompra": 5000.0,
+        "precioVenta": 10000.0
+    },
+    {
+        "id": 5,
+        "codigo": "SKU005",
+        "nombre": "Perfume Gringo",
+        "descripcion": "Perfume de Estados Unidos",
+        "categoria": "Masomenos",
+        "precioCompra": 15000.0,
+        "precioVenta": 30000.0
+    }
+]
+Inventario:
+[{"id":1,"nombreSucursal":"SantaRosa","idProducto":1,"stockDisponible":19,"stockMinimo":10},
+{"id":2,"nombreSucursal":"Providencia","idProducto":4,"stockDisponible":89,"stockMinimo":15},
+{"id":3,"nombreSucursal":"Providencia","idProducto":1,"stockDisponible":33,"stockMinimo":10},
+{"id":5,"nombreSucursal":"SantaRosa","idProducto":5,"stockDisponible":22,"stockMinimo":7}]
+CANT COOK :(
+  @GetMapping("/nombre_sucursal/{nombreSucursal}")
+    public ResponseEntity<List<Inventario>> buscar(@PathVariable String nombreSucursal) {
+        List<Inventario> inventarios = inventarioService.findAll();
+        ArrayList<Inventario> local=new ArrayList<>();
+        
+        for(Inventario inventarios:inv){
+            if(inv.getNombreSucursal= nombreSucursal){
+                local.add(inv);
+            }
+        }
+
+        
+        if(inventarios.isEmpty()){
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.ok(inventarios);
+    }
+
+    /*
+     * public ResponseEntity<List<Inventario>> listar(){
+        List<Inventario> inventarios =inventarioService.findAll();
+        if(inventarios.isEmpty()){
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.ok(inventarios);
+    }
+     */
