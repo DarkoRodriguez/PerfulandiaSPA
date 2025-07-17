@@ -1,0 +1,8 @@
+0. Si es que se require, instalar XAMPP para abrir el puerto 3306 de MySQL y asi entrar a la instancia "localhost" en MySQL workbench.
+1. Iniciar MySQL workbench y ejecutar el Script "Base de Datos para Perfulandia".
+2. Abrir carpeta "PerfulandiaV3" en VisualStudioCode
+3. Acceder a las diferentes carpetas, exceptuando "Herramientas Adicionales".
+4. Ejecutar los 4 microservicios por separado (iniciando y deteniendo cada uno) para la Creación de las tablas en las diferentes bases de datos que se han creado.
+5. Luego de tener las tablas creadas, en MySQL workbench debemos abrir el script que se llama "Inserción de Datos para la Base de Datos".
+6. Ahora debemos elegir una base de datos y seleccionar los datos que sean para cada base de datos por separado, y ejecutar.
+7.Ahora ya se puede ejecutar cada microservicio que se desee e ir a postman para probar sus endpoints.
